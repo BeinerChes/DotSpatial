@@ -77,8 +77,7 @@ namespace DotSpatial.Projections.Nad
             foreach (var gridType in new[] {"*.los", "*.gsb", "*.dat", "*.lla"})
                 foreach (var s in Directory.EnumerateFiles(strGridsFolder, gridType, opt))
                 {
-                    string coreName = "@" + Path.GetFileNameWithoutExtension(s);
-                    if (_tables.ContainsKey(coreName)) continue;
+                    string coreName = "@" + Path.GetFileNameWithoutExtension(s);  
                     string ext = Path.GetExtension(s).ToLower();
                     if (ext == ".los" && !File.Exists(s.Replace(".los", ".las"))) continue;
                     var s1 = s;
